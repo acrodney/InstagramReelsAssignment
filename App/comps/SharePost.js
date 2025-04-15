@@ -7,7 +7,7 @@ import {
   Vibration,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import * as Clipboard from "expo-clipboard"; // ✅ Import clipboard
+import * as Clipboard from "expo-clipboard";
 import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -38,13 +38,11 @@ export default function SharePost({ postId }) {
       let updatedLikes;
       let url = `https://unigate.com.ng/posts/${postId}`;
       if (parsedPosts.includes(postId)) {
-        // Unlike
         updatedLikes = parsedPosts.filter((id) => id !== postId);
         setShared(false);
       } else {
-        // Like
         updatedLikes = [...parsedPosts, postId];
-        await Clipboard.setStringAsync(url); // ✅ Copy to clipboard
+        await Clipboard.setStringAsync(url);
         setShared(true);
       }
 
@@ -65,7 +63,7 @@ export default function SharePost({ postId }) {
       }}
     >
       <Feather
-        name={shared ? "share" : "share"} // Can be "send" for already shared
+        name={shared ? "share" : "share"}
         size={20}
         color={shared ? "blue" : "#9d9d9d"}
       />

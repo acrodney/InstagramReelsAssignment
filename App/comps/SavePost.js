@@ -36,11 +36,9 @@ export default function SavePost({ postId }) {
 
       let updatedLikes;
       if (parsedPosts.includes(postId)) {
-        // Unlike
         updatedLikes = parsedPosts.filter((id) => id !== postId);
         setSaved(false);
       } else {
-        // Like
         updatedLikes = [...parsedPosts, postId];
         setSaved(true);
       }

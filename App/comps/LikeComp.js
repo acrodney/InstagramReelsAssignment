@@ -36,11 +36,9 @@ export default function LikeComp({ postId }) {
 
       let updatedLikes;
       if (parsedPosts.includes(postId)) {
-        // Unlike
         updatedLikes = parsedPosts.filter((id) => id !== postId);
         setLiked(false);
       } else {
-        // Like
         updatedLikes = [...parsedPosts, postId];
         setLiked(true);
       }

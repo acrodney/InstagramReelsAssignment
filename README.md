@@ -87,7 +87,7 @@ App/
 
 - Clipboard Sharing
 
-  - Constructs a custom link like `https://myapp.com/post/123`
+  - Constructs a custom link like `https://unigate.com.ng/post/123`
   - Copies it on click
 
 - Device Vibration
